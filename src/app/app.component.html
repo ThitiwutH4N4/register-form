@@ -1,0 +1,14 @@
+ <ul>
+    <li *ngFor="let item of items | async">
+      <input type="text" #updatetext [value]="item.text" />
+      <button (click)="updateItem(item.$key, updatetext.value)">Update</button>
+      <button (click)="deleteItem(item.$key)">Delete</button>
+    </li>
+  </ul>
+  <label for="ชื่อ"></label>
+  <input type="text" #newitem />
+  <label for="นามสกุล"></label>
+  <input type="text" #newitem />
+  <button (click)="addItem(newitem.value)">Add</button>
+  <button (click)="deleteEverything()">Delete All</button>
+
